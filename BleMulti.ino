@@ -25,6 +25,9 @@
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
+#include <Lcd1602UniPrint.h>
+
+Lcd1602UniPrint lcd;
 
 int led_pin_1 = 4;
 int led_pin_2 = 0;
@@ -94,6 +97,11 @@ void setup() {
   digitalWrite(led_pin_1, LOW);
   digitalWrite(led_pin_2, LOW);
   digitalWrite(led_pin_3, LOW);
+
+  lcd.d.init(); // For ESP32 use LCD_1602_RUS_ALL fork.
+
+  lcd.d.backlight();
+  lcd.d.setCursor(0, 0);
 }
 
 void loop() {
@@ -112,11 +120,13 @@ void loop() {
     Serial.println("start advertising");
     oldDeviceConnected = deviceConnected;
     digitalWrite(led_pin_3, LOW);
+    lcd.print_label_ll("Disconnected.");
   }
   // connecting
   if (deviceConnected && !oldDeviceConnected) {
     // do stuff here on connecting
     oldDeviceConnected = deviceConnected;
     digitalWrite(led_pin_3, HIGH);
+    lcd.print_label_ll("Connected.");
   }
 }
