@@ -14,29 +14,46 @@ public:
   // Returns the length of a Unicode string in characters.
   static int len(const char *s);
 
+  // Prints a character n times.
+  void repeat(const char *ch, int n);
+
+  // Prints a signed decimal number in the left corner.
+  void print_dec_left(const char *label, int value, int line,
+                      bool clean = true);
+
+  // Prints a signed decimal number in the right corner.
+  void print_dec_right(const char *label, int value, int line,
+                       bool clean = true);
+
+  // Prints a label in the left corner.
+  void print_label_left(const char *label, int line, bool clean = true);
+
+  // Prints a label in the right corner.
+  void print_label_right(const char *label, int line, bool clean = true);
+
   // Prints a signed decimal number in the lower right corner.
-  void print_dec_lr(const char *label, int value);
+  void print_dec_lr(const char *label, int value, bool clean = true);
 
   // Prints a signed decimal number in the upper right corner.
-  void print_dec_ur(const char *label, int value);
+  void print_dec_ur(const char *label, int value, bool clean = true);
 
   // Prints a signed decimal number in the lower left corner.
-  void print_dec_ll(const char *label, int value);
+  void print_dec_ll(const char *label, int value, bool clean = true);
 
   // Prints a signed decimal number in the upper left corner.
-  void print_dec_ul(const char *label, int value);
+  void print_dec_ul(const char *label, int value, bool clean = true);
 
   // Prints a label in the lower right corner.
-  void print_label_lr(const char *label);
+  void print_label_lr(const char *label, bool clean = true);
 
   // Prints a label in the upper right corner.
-  void print_label_ur(const char *label);
+  void print_label_ur(const char *label, bool clean = true);
 
   // Prints a label in the lower left corner.
-  void print_label_ll(const char *label);
+  void print_label_ll(const char *label, bool clean = true);
 
   // Prints a label in the upper left corner.
-  void print_label_ul(const char *label);
+  void print_label_ul(const char *label, bool clean = true);
 
   LCD_1602_RUS d;
 

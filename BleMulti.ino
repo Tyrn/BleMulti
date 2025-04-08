@@ -120,13 +120,13 @@ void loop() {
     Serial.println("start advertising");
     oldDeviceConnected = deviceConnected;
     digitalWrite(led_pin_3, LOW);
-    lcd.print_label_ll("Disconnected.");
+    lcd.print_label_lr("Disconnected.");
   }
   // connecting
   if (deviceConnected && !oldDeviceConnected) {
     // do stuff here on connecting
     oldDeviceConnected = deviceConnected;
     digitalWrite(led_pin_3, HIGH);
-    lcd.print_label_ll("Connected.");
+    lcd.print_label_lr("Connected.");
   }
 }
